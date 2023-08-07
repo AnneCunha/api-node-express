@@ -1,0 +1,27 @@
+{
+  "name": "projeto-inicial-backend",
+  "version": "0.0.1",
+  "description": "API node com frameork express",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AnneCunha/api-node-express.git"
+  },
+  "keywords": [
+    "api",
+    "node",
+    "js"
+  ],
+  "author": "Anne Cunha",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AnneCunha/api-node-express/issues"
+  },
+  "homepage": "https://github.com/AnneCunha/api-node-express#readme",
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
