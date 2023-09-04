@@ -34,6 +34,12 @@ CREATE TABLE `users` (
   `pass` varchar(256) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+CREATE TABLE `products` (
+  `id` int(11) NOT NULL,
+  `name` varchar(200) NOT NULL,
+  `amount` varchar(256) NOT NULL,
+  `description` varchar(500) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 --
 -- Extraindo dados da tabela `users`
 --
@@ -53,6 +59,8 @@ INSERT INTO `users` (`id`, `name`, `email`, `pass`) VALUES
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
+ALTER TABLE `products`
+  ADD PRIMARY KEY (`id`);
 --
 -- AUTO_INCREMENT de tabelas despejadas
 --

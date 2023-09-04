@@ -1,19 +1,16 @@
-import express from "express"
+import express from 'express'
+import getUser from '../controllers/user/getUser.js'
+import listUsers from '../controllers/user/listUsers.js'
+import insertUser from '../controllers/user/insertUser.js'
+import updateUser from '../controllers/user/updateUser.js'
+import deleteUser from '../controllers/user/deleteUser.js'
 
 const router = express.Router()
 
-//user
-router.get('/', (req, res) => {
-    res.json({message: "Bem-vindo! caminho router, pelo metodo get/user"})
-}) 
-router.post('/', (req, res) => {
-    res.json({message: "Bem-vindo! caminho router, pelo metodo post/user"})
-}) 
-router.put('/', (req, res) => {
-    res.json({message: "Bem-vindo! caminh router, pelo metodo put/user"})
-}) 
-router.delete('/', (req, res) => {
-    res.json({message: "Bem-vindo! caminho router, pelo metodo delete/user"})
-})
+router.get('/', getUser)
+router.get('/list', listUsers)
+router.post('/', insertUser)
+router.put('/', updateUser)
+router.delete('/', deleteUser)
 
 export default router
