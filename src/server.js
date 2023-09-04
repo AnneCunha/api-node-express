@@ -1,17 +1,25 @@
 //const express = require('express')
+import express from 'express'
+import bodyParser from 'body-parser'
 
-import express from "express"
-import userRouter from "./routes/userRouter.js"
+import userRouter from './routers/userRouter.js'
+import authRouter from './routers/authRouter.js'
+import {PORT} from './config.js' 
 
 const api = express()
 
-api.get('/', (req, res) => {
-    res.json({message: "Bem-vindo a nossa API, pelo metodo get"})
-}) 
-api.use('/user', userRouter)   
+//converte toda requisição com body json para objeto no req.body
+api.use(bodyParser.json())
 
-api.listen(3000, () => {
-    console.log('Servidor conectado na porta 3000. http://localhost:3000')
+
+api.get('/', (req, res) => {
+    res.json({message: "Bem-vindo a nossa API"})
 })
 
+api.use('/user', userRouter)
+api.use('/auth', authRouter)
+
+api.listen(PORT, () => {
+    console.log(`Servidor rodando na porta ${PORT}! http://localhost:${PORT}`)
+})
 
